@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Focus Keeper - ADHD Support",
+  "version": "1.6",
+  "description": "Helps students stay focused by reminding them when they leave their allowed study websites.",
+  "permissions": [
+    "tabs",
+    "storage",
+    "scripting"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Focus Settings"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["ting.mp3"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

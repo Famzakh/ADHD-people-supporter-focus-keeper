@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body { font-family: Arial, sans-serif; width: 350px; padding: 15px; margin: 0; background-color: #f9f9f9; }
+    h3 { margin-top: 0; margin-bottom: 15px; color: #2c3e50; text-align: center; font-size: 18px; }
+    
+    .master-container { display: flex; align-items: center; justify-content: space-between; background: #e8f8f5; padding: 12px; border-radius: 6px; margin-bottom: 15px; border: 1px solid #a3e4d7; font-weight: bold; color: #117864; }
+    .master-container.off { background: #fdedec; border-color: #f5b7b1; color: #c0392b; }
+    .switch { position: relative; display: inline-block; width: 44px; height: 24px; margin: 0; }
+    .switch input { opacity: 0; width: 0; height: 0; }
+    .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; transition: .4s; border-radius: 24px; }
+    .slider:before { position: absolute; content: ""; height: 16px; width: 16px; left: 4px; bottom: 4px; background-color: white; transition: .4s; border-radius: 50%; }
+    input:checked + .slider { background-color: #27ae60; }
+    input:checked + .slider:before { transform: translateX(20px); }
+
+    label.section-title { display: block; margin-bottom: 8px; font-weight: bold; font-size: 14px; color: #34495e; }
+    
+    .target-row { background: #ffffff; border: 1px solid #d5dbdb; padding: 10px; border-radius: 6px; margin-bottom: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+    .row-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+    .row-header span { font-size: 12px; font-weight: bold; color: #7f8c8d; }
+    .remove-btn { background: #e74c3c; color: white; border: none; padding: 2px 6px; font-size: 11px; cursor: pointer; border-radius: 3px; font-weight: bold; }
+    .remove-btn:hover { background: #c0392b; }
+    
+    input[type="text"] { width: 100%; padding: 8px; margin-bottom: 8px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; font-size: 13px; }
+    
+    .mode-container { background: #f4f6f6; padding: 10px; border-radius: 4px; font-size: 12px; border-left: 3px solid #7f8c8d; }
+    .mode-container label { font-weight: normal; cursor: pointer; color: #2c3e50; line-height: 1.4; display: inline-block; width: 90%; vertical-align: top;}
+    .mode-container input[type="radio"] { margin-bottom: 8px; cursor: pointer; margin-top: 2px;}
+    
+    #addLinkBtn { width: 100%; padding: 8px; background-color: #3498db; color: white; border: none; cursor: pointer; border-radius: 4px; font-weight: bold; margin-bottom: 15px; font-size: 13px; }
+    #addLinkBtn:hover { background-color: #2980b9; }
+
+    .toggle-container { margin-bottom: 15px; font-size: 14px; color: #34495e; border-top: 1px solid #eaeded; padding-top: 12px; }
+    button#saveBtn { width: 100%; padding: 12px; background-color: #27ae60; color: white; border: none; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 15px; }
+    button#saveBtn:hover { background-color: #2ecc71; }
+  </style>
+</head>
+<body>
+  <h3>Focus Keeper</h3>
+
+  <div class="master-container" id="masterBox">
+    <span id="masterText">App is ON</span>
+    <label class="switch">
+      <input type="checkbox" id="masterToggle" checked>
+      <span class="slider"></span>
+    </label>
+  </div>
+  
+  <label class="section-title">Allowed Websites / URLs:</label>
+  <div id="targetsContainer"></div>
+  <button id="addLinkBtn" type="button">+ Add Website</button>
+
+  <div class="toggle-container">
+    <input type="checkbox" id="soundToggle" checked>
+    <label for="soundToggle" style="display:inline; font-weight: normal; cursor:pointer;">Enable Sound Alert</label>
+  </div>
+
+  <button id="saveBtn">Save Settings</button>
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -66,7 +66,7 @@ if (isValidPrefix(TARGET_URL, currentUrl)) {
   console.warn("Truy cập bị từ chối do sai tiền tố hoặc tên miền.");
   // Dừng thực thi hoặc hiển thị cảnh báo
 }
-
+```
 ## 📁 Cấu trúc thư mục tham khảo
 Để extension hoạt động chuẩn xác, hãy đảm bảo thư mục dự án của bạn có cấu trúc cơ bản như sau:
 ```text
@@ -74,5 +74,4 @@ if (isValidPrefix(TARGET_URL, currentUrl)) {
 ├── background.js       # (Tùy chọn) Script chạy ngầm
 ├── content_script.js   # File chứa đoạn code logic xử lý URL được cấp ở trên
 └── README.md           # Tài liệu hướng dẫn này
-
 
